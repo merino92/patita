@@ -49,7 +49,7 @@ Agregar Municipios
    <form class="form-horizontal" id="formulario" action"#" method="post">
     <div class="row">
      <div class="col-sm-4">
-    <img class="col-sm-12 control-label" src="../../imagenes/logopata.jpg" alt="">
+    <img class="col-sm-12 control-label" src="../../imagenes/logopata.jpg" alt="" width="100%">
      </div>
    <!--la otra mitad del formulario-->
    <div class="col-sm-8">
@@ -88,6 +88,7 @@ Agregar Municipios
 
         <p class="btnderecha">  <button  type="button" id="btnagregar" onclick="Insertar()" class="btn btn-success btn-sm btn-labeled ">Agregar</button>
           <button  type="button" id="btnactualizar" onclick="Actualizar()" class="btn btn-info btn-sm btn-labeled ">Actualizar</button>
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -99,6 +100,9 @@ Agregar Municipios
 
 
 >>>>>>> 6d2efc9dc61c5138c0eaf28c45f2eca2aab61bd9
+=======
+          <button  type="button" id="btnagregar" class="btn btn-success btn-sm btn-labeled ">Agregar Nuevo</button>
+>>>>>>> b8c7aab072c3edca83f3836b5b3f8a19a0330d33
          <button  type="button" data-dismiss="modal"  id="btncancelar" class="btn btn-danger btn-sm btn-labeled ">Cancelar</button></p>
 
       </div>
