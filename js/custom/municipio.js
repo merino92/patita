@@ -226,4 +226,72 @@ var objecto={
 
 
 }
-//este 1
+
+
+function Actualizar(){
+var res=Validar();
+if(res==true){
+  var objecto={
+    "funcion":3,
+    "municipio":$("#nombre").val(),
+    "iddepartamento":parseInt($("#depar").val())
+  };
+console.log(objecto);
+  $.ajax({
+         url: "../../controlador/MunicipiosController.php",
+         type: "POST",
+         data: JSON.stringify(objecto),
+         contentType: "application/json;charset=utf-8",
+         dataType: "json",
+         success: function (result) {
+           console.log(result);
+             var html = '';
+             $.each(result, function (key, item) {
+
+              if(item.respuesta>0){
+                  Listar();
+                swal({
+                        type: "success",
+                                 title: 'Exito!!',
+                                 text: 'Actualizado Correctamente',
+                                 showCancelButton: false, // There won't be any cancel button
+                                 showConfirmButton: false,
+                                 timer: 2000
+                             });
+                  $("#nombre").val(null);
+                  $("#modal_form").modal('hide');
+
+              }else{
+
+                swal({
+                        type: "warning",
+                                 title: 'Error!!',
+                                 text: 'Algo Ocurrio',
+                                 showCancelButton: false, // There won't be any cancel button
+                                 showConfirmButton: false,
+                                 timer: 2000
+                             });
+              }
+
+
+             });
+
+         },
+         error: function (errormessage) {
+             alert(errormessage.responseText);
+         }
+     });
+
+}else{
+  swal({
+          type: "warning",
+                   title: 'Error!!',
+                   text: "Campos vacios",
+                   showCancelButton: false, // There won't be any cancel button
+                   showConfirmButton: false,
+                   timer: 2000
+               });  }
+}
+
+
+}
