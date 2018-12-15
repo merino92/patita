@@ -77,14 +77,10 @@ Agregar Municipios
     <div class="col-sm-12 col-md-12 col-lg -12">
       <div class="form-group">
 
-<<<<<<< HEAD
 
         <p class="btnderecha">  <button  type="button" id="btnagregar" onclick="Insertar()" class="btn btn-success btn-sm btn-labeled ">Agregar</button>
           <button  type="button" id="btnactualizar" onclick="Actualizar()" class="btn btn-info btn-sm btn-labeled ">Actualizar</button>
-=======
-        <p class="btnderecha">  <button  type="button" id="btnagregar" class="btn btn-success btn-sm btn-labeled ">Agregar</button>
-          <button  type="button" id="btnactualizar" class="btn btn-success btn-sm btn-labeled ">Actualizar</button>
->>>>>>> 1bbacc183564f36d9a91fbc01170f5b9104ae3fe
+
          <button  type="button" data-dismiss="modal"  id="btncancelar" class="btn btn-danger btn-sm btn-labeled ">Cancelar</button></p>
 
       </div>
