@@ -186,6 +186,7 @@ Registro de Adopciones
                 <div class="form-group">
                   <p class="btnderecha">  <button  type="button" id="btnguardar" class="btn btn-primary btn-sm btn-labeled ">Guardar</button>
                     <button  type="button" id="btnactualizar" class="btn btn-info btn-sm btn-labeled ">Actualizar</button>
+                      <button  type="button" id="btnagregar" class="btn btn-info btn-sm btn-labeled ">Agregar Nuevo</button>
                    <button  type="button" data-dismiss="modal"  id="btncancelar" class="btn btn-danger btn-sm btn-labeled ">Cancelar</button></p>
                 </div>
               </div>

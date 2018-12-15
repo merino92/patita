@@ -35,7 +35,7 @@ require_once '../../vistas/ti.php';
       </script>
       <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 
-      
+
       <link rel="stylesheet" href="../../css/barra.css">
         <link rel="stylesheet" href="../../css/botones.css">
 
@@ -44,7 +44,7 @@ require_once '../../vistas/ti.php';
   <body>
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-header">
+      <div class="navbar-header navbar-left" >
         <a class="navbar-brand" href="#">Echame una Pata </a>
        <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle"><img src="../../vistas/base/icono_menu.png" width="30" height="30" alt=""></a>
       </div>

@@ -59,18 +59,12 @@ require_once "../../vistas/base/base.php";
      <div class="row">
       <div class="col-sm-4">
 
-     <img class="col-sm-12 control-label" src="../../imagenes/logopata.jpg" alt="">
+     <img class="col-sm-12 control-label" src="../../imagenes/logopata.jpg" alt="" width="100%">
       </div>
 
  <!--la otra mitad del formulario-->
     <div class="col-sm-8">
         <h3>Datos</h3>
-      <div class="form-group">
-          <label for="idproducto" class="col-sm-3 control-label">Id Producto</label>
-          <div class="col-sm-8">
-              <input name="idproducto" id="idproducto" class="form-control" type="text" placeholder="Id Producto">
-          </div>
-      </div>
       <div class="form-group">
           <label for="nombreproducto" class="col-sm-3 control-label">Nombre del Producto</label>
           <div class="col-sm-8">
@@ -107,6 +101,7 @@ require_once "../../vistas/base/base.php";
        <div class="form-group">
          <p class="btnderecha">  <button  type="button" id="btnguardar" class="btn btn-primary btn-sm btn-labeled ">Guardar</button>
            <button  type="button" id="btnactualizar" class="btn btn-info btn-sm btn-labeled ">Actualizar</button>
+           <button  type="button" id="btnagregar" class="btn btn-success btn-sm btn-labeled ">Agregar Nuevo</button>
           <button  type="button" data-dismiss="modal" id="btncancelar" class="btn btn-danger btn-sm btn-labeled ">Cancelar</button></p>
        </div>
        </div>
