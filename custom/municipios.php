@@ -56,6 +56,18 @@ $res=$con->query('select @dato as respuesta')->fetchAll();
 return $res;
 }
 
+function EliminarMunicipio($id){
+$con=Conectar();
+$sql='call eliminar_municipio(:idmuni,@dato)';
+$data=$con->prepare($sql);
+$data->bindParam(":idmuni",$id);
+$data->execute();
+$data->closeCursor();
+$data->setFetchMode(PDO::FETCH_ASSOC);
+$res=$con->query('select @dato as respuesta')->fetchAll();
+
+return $res;
+}
 
 }
 

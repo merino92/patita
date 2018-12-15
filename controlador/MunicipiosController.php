@@ -43,6 +43,9 @@ if(!isset($_SESSION['usuario'])){
       echo json_encode($data);
       break;
       case 4:
+      $d=$json['id'];
+      $data=$objecto->EliminarMunicipio($d);
+      echo json_encode($data);
       break;
       default:
       $id=$json['iddepartamentos'];
