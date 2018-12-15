@@ -22,7 +22,7 @@ function Listar(){
   };
 
     $.ajax({
-           url: "../../controlador/MunicipioController.php",
+           url: "../../controlador/MunicipiosController.php",
            type: "GET",
            data: objecto,
            contentType: "application/json;charset=utf-8",
@@ -107,7 +107,7 @@ if(validacion==true){
   };
 console.log(objecto);
   $.ajax({
-         url: "../../controlador/MunicipioController.php",
+         url: "../../controlador/MunicipiosController.php",
          type: "POST",
          data: JSON.stringify(objecto),
          contentType: "application/json;charset=utf-8",
@@ -177,7 +177,7 @@ var objecto={
   "funcion":5,
   "iddepartamentos":numero};
   $.ajax({
-         url: "../../controlador/MunicipioController.php",
+         url: "../../controlador/MunicipiosController.php",
          type: "POST",
          data: JSON.stringify(objecto),
          contentType: "application/json;charset=utf-8",
