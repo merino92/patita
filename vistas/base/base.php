@@ -84,6 +84,12 @@ require_once '../../vistas/ti.php';
                    <a class="themeBtn2" href="../../vistas/inicio/index.php"><span class="glyphicon glyphicon-home"></span> Inicio</a>
                </li>
                <li>
+                   <a class="themeBtn2" href="../../vistas/PerfilUsuario/index.php"><span class="glyphicon glyphicon-home"></span> Perfil Usuarios</a>
+               </li>
+               <li>
+                   <a class="themeBtn2" href="../../vistas/PerfilPermisos/index.php"><span class="glyphicon glyphicon-home"></span> Perfil Permisos</a>
+               </li>
+               <li>
                    <a class="themeBtn2" href="../../vistas/Apadrinamiento/index.php"><span class="glyphicon glyphicon-user"></span>Apadrinamiento</a>
                </li>
                <li>
@@ -105,7 +111,10 @@ require_once '../../vistas/ti.php';
                     <a class="themeBtn2" href="../../controlador/DepartamentoController.php"><span class="glyphicon glyphicon-globe"></span>Departamentos</a>
                </li>
                <li>
-                    <a class="themeBtn2" href="../../controlador/MunicipiosController.php"><span class="glyphicon glyphicon-globe"></span>Municipio</a>
+                    <a class="themeBtn2" href="../../controlador/MunicipioController.php"><span class="glyphicon glyphicon-globe"></span>Municipio</a>
+               </li>
+               <li>
+                   <a class="themeBtn2" href="../../vistas/Configuraciones/index.php"><span class="glyphicon glyphicon-th"></span>Configuraciones</a>
                </li>
                <li>
                    <a class="themeBtn2" href="#">About</a>

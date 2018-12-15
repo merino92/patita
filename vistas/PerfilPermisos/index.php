@@ -5,11 +5,11 @@
 <div class=" panel panel-flat">
 
   <div class="panel-heading">
-    <h3 class="panel-title" >Municipios</h3>
+    <h3 class="panel-title" >Perfil Permisos</h3>
   </div>
   <div class="heading-elements">
   <button type="button" class="btn btn-info btnderecha" data-toggle="modal" data-target="#modal_form">
-Agregar Municipios
+Agregar Permisos
 </button>
 
   </div>
@@ -18,8 +18,8 @@ Agregar Municipios
     <table class="table table-xs">
       <thead>
         <tr>
-          <td>CODIGO</td>
-          <td>NOMBRE</td>
+          <td>IdModulo</td>
+        
         </tr>
       </thead>
       <tbody id="cuerpo" class="tbody">
@@ -40,7 +40,7 @@ Agregar Municipios
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                  <span aria-hidden="true">&times;</span>
     </button>
-    <h3>Formulario de Municipios</h3>
+    <h3>Formulario de Permisos</h3>
   </div>
 
 <div class="modal-body">
@@ -52,19 +52,9 @@ Agregar Municipios
      </div>
    <!--la otra mitad del formulario-->
    <div class="col-sm-8">
-      <h3>Datos </h3>
-       <div class="form-group">
-           <label for="depar" class="col-sm-4 control-label">Departamento</label>
-           <div class="col-sm-7">
-               <select class="form-control" id="depar" name="depar"></select>
-           </div>
-       </div>
-       <div class="form-group">
-           <label for="nombre" class="col-sm-4 control-label">Nombre de Municipio</label>
-           <div class="col-sm-7">
-               <input name="nombre" id="nombre" class="form-control"  type="text" placeholder="Nombre de Municipio">
-           </div>
-       </div>
+      <h3>Datos de Permisos </h3>
+
+
    </div>
 
    </div><!--aqui termina el row de  formulario-->

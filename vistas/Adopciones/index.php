@@ -196,9 +196,5 @@ Registro de Adopciones
         </div>
       </div><!--fin del Modal-->
 
-<<<<<<< HEAD
-          $("#modal_form").click(function(){
-=======
->>>>>>> e0c5a4091257358a5c9c769f57f47526a7f96274
 
 <?php endblock('body'); ?>
