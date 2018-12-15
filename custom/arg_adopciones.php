@@ -18,27 +18,23 @@ class Adopciones{ //clase adopciones
   return $rows;
 
 }//ciere de la funcion
-
-
   public funtion InsetarAdopciones($data ){
   $modelo = new Conexion();
   $conexion = $modelo->Conectar();
   $sql = "insert into adopciones(idadopcion, cod_adopcion, idmascota, nombre_adopta, apellido_adopta, iddepartamento, idmunicipio, direccion, iddocumento, n_documento, tel_casa, fecha_adopcion) values(:idadopcion, :cod_adopcion, :idmascota, :nombre_adopta, :apellido_adopta, :iddepartamento, :idmunicipio, :direccion, :iddocumento, :n_doumento, :tel_casa, :fecha_adopcion);"
-    $statement = $conexion->prepare($sql);
-
-      $statement->bindParam(':cod_adopcion', $data['cod_adopcion']);
-        $statement->bindParam(':idmascota', $data['idmascota']);
-            $statement->bindParam(':nombre_adopta', $data['nombre_adopta']);
-                $statement->bindParam(':apellido_adopta', $data['apellido_adopta']);
-                    $statement->bindParam(':iddepartamento', $data['iddepartamento']);
-                        $statement->bindParam(':idmunicipio', $data['idmunicipio']);
-                            $statement->bindParam(':direccion', $data['direccion']);
-                                $statement->bindParam(':iddocumento', $data['iddocumento']);
-                                    $statement->bindParam(':n_documento', $data['n_documento']);
-                                        $statement->bindParam(':tel_casa', $data['tel_casa']);
-                                            $statement->bindParam(':fecha_adopcion', $data['fecha_adopcion']);
-
-        $statement->execute();
+  $statement = $conexion->prepare($sql);
+  $statement->bindParam(':cod_adopcion', $data['cod_adopcion']);
+  $statement->bindParam(':idmascota', $data['idmascota']);
+  $statement->bindParam(':nombre_adopta', $data['nombre_adopta']);
+  $statement->bindParam(':apellido_adopta', $data['apellido_adopta']);
+  $statement->bindParam(':iddepartamento', $data['iddepartamento']);
+  $statement->bindParam(':idmunicipio', $data['idmunicipio']);
+  $statement->bindParam(':direccion', $data['direccion']);
+  $statement->bindParam(':iddocumento', $data['iddocumento']);
+  $statement->bindParam(':n_documento', $data['n_documento']);
+  $statement->bindParam(':tel_casa', $data['tel_casa']);
+  $statement->bindParam(':fecha_adopcion', $data['fecha_adopcion']);
+  $statement->execute();
           if (!$statement) {
             return "error al crear el registro";
           }else {
@@ -83,8 +79,5 @@ function EliminarAdopciones($idadopcion){
  $res=$statement->fetchAll();
  return $res;
 }//ciere de la funcion
-
-
 }
-
  ?>

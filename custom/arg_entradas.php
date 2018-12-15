@@ -64,12 +64,5 @@ class Entradas { // clase entrdas
    $res=$statement->fetchAll();
    return $res;
   }//ciere de la funcion
-
-
-
-
-
 }
-
-
  ?>

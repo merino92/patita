@@ -23,10 +23,10 @@ class Categorias { // clase Catoria
   $modelo = new Conexion();
   $conexion = $modelo->Conectar();
   $sql = "insert into categorias(idcategorias, categorias) values(:idcategorias, :categorias);"
-    $statement = $conexion->prepare($sql);
-    $statement->bindParam(':idcategorias', $idcategorias);
-      $statement->bindParam(':categorias', $categorias);
-        $statement->execute();
+  $statement = $conexion->prepare($sql);
+  $statement->bindParam(':idcategorias', $idcategorias);
+  $statement->bindParam(':categorias', $categorias);
+  $statement->execute();
           if (!$statement) {
             return "error al crear el registro";
           }else {
@@ -34,9 +34,5 @@ class Categorias { // clase Catoria
             return "registro creado correctamente";
           }//cierre del else
   }//cierre de funcion
-
-
 }
-
-
  ?>

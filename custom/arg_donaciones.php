@@ -60,11 +60,5 @@ class Donaciones { // clase Catoria
    return $res;
   }//ciere de la funcion
 
-
-
-
-
 }
-
-
  ?>

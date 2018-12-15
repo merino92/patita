@@ -72,11 +72,7 @@ function InsertarConfiguraciones($idconfiguraciones, $nombre_institucion,  $idde
  $statement->setFetchMode(PDO::FETCH_ASSOC);
  $res=$statement->fetchAll();
  return $res;
-}//c
-
-
-
-
+}
 }
 
  ?>

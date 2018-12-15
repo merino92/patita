@@ -16,10 +16,6 @@ $variable=$json['funcion'];
 }//verifica que tipo de respuesta es
 
 
-
-
-
-
 if(!isset($_SESSION['usuario'])){
 
       header('Location: ../vistas/login/login.php'); //retorna al login en caso no haya session
@@ -33,10 +29,6 @@ if(!isset($_SESSION['usuario'])){
   $objecto=new Municipio();
     switch ($variable) {
       case 1:
-
-
-      
-
 
       $data=$objecto->ListarMunicipio();
       echo json_encode($data);

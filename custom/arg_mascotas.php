@@ -19,17 +19,12 @@ class Mascotas{ //clase mascotas
 
 }//ciere de la funcion
 
-<<<<<<< HEAD
-//autualizar
-//function Actuzalizar(data)
-function ActualizarMascotas($nombre_mascota, $idgenero, $idraza, $sexo, $tipo_sangre, $color, $fecha_creo, $usuario_creo){
-=======
+
 
 
 //autualizar
 //function Actuzalizar(data)
 function ActuzalizarMascotas($nombre_mascota, $idgenero, $idraza, $sexo, $tipo_sangre, $color, $fecha_creo, $usuario_creo){
->>>>>>> origin/master
  $conexion = Conectar();
  $sql = "UPDATE mascotas SET nombre_mascota=:nombre_mascota and idgenero=:idgenero  and idraza=:idraza  and sexo=:sexo  and tipo_sangre=:tipo_sangre  and color=:color  and fecha_creo=:fecha_creo  and usuario_creo=:usuario_creo";
  $statement = $conexion->prepare($sql);
@@ -80,10 +75,7 @@ function InsertarMascotas($nombres, $primer_apellido, $segundo_apellido, $fehca_
  $statement->setFetchMode(PDO::FETCH_ASSOC);
  $res=$statement->fetchAll();
  return $res;
-}//c
-
-
-
+}
 
 }
 
