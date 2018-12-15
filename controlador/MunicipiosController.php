@@ -29,10 +29,7 @@ if(!isset($_SESSION['usuario'])){
   $objecto=new Municipio();
     switch ($variable) {
       case 1:
-<<<<<<< HEAD
 
-=======
->>>>>>> c2732ddc9d7ad339dcaf55ee88d94924f5542380
       $data=$objecto->ListarMunicipio();
       echo json_encode($data);
         break;
