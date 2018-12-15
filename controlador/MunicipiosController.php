@@ -33,10 +33,7 @@ if(!isset($_SESSION['usuario'])){
   $objecto=new Municipio();
     switch ($variable) {
       case 1:
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
+
       $sesion=VerificarSesion();
       if($session==True){
       echo json_enconde($i->insetarMunicipio($data));
@@ -44,8 +41,7 @@ if(!isset($_SESSION['usuario'])){
         session_destroy();
         header('Location: ../vistas/login/login.php');
       }
->>>>>>> origin/master
->>>>>>> f4c6d3da8c4959e8555278c5bf36540afc46361e
+
 
       $data=$objecto->ListarMunicipio();
       echo json_encode($data);
