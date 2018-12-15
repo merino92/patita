@@ -19,16 +19,11 @@ require_once "../../vistas/base/base.php";
           <table class="table table-xs">
             <thead>
               <tr class="bg-primary">
-<<<<<<< HEAD
                 <th>Codigo</th>
                 <th>Nombre del Padrino/Madrina</th>
 
                 <th>Opciones</th>
 
-=======
-                <th>Codigo/Id</th>
-                <th>Nombre del Padrino/Madrina</th>  
->>>>>>> 555dcc1f26835910790a4bb1be54ceb78fb056f0
               </tr>
 
               <tbody id="tabla1" class="tbody" ></tbody>
@@ -80,7 +75,6 @@ require_once "../../vistas/base/base.php";
                <input name="nombres" id="nombres" class="form-control" type="text" placeholder="Nombres">
            </div>
        </div>
-<<<<<<< HEAD
        <div class="form-group">
            <label for="edad" class="col-sm-3 control-label">Edad</label>
            <div class="col-sm-8">
@@ -124,8 +118,6 @@ require_once "../../vistas/base/base.php";
                 <select class="form-control" id="municipio" name="municipio"></select>
              </div>
          </div>
-=======
->>>>>>> 555dcc1f26835910790a4bb1be54ceb78fb056f0
 
      </div>
 
