@@ -2,5 +2,9 @@
   "host":"localhost",
   "dbname":"PATITA",
   "usuario":"root",
+<<<<<<< HEAD
   "password":"adolfo1105"
+=======
+  "password":"sandra23"
+>>>>>>> 1bbacc183564f36d9a91fbc01170f5b9104ae3fe
 }

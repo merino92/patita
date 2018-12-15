@@ -7,17 +7,9 @@ $clase= new Consultas();
 
 function ListarCategorias(){
 
-
 return json_encode($clase->ListarCategorias());
 
-
 }
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> origin/master
 }
 
  ?>

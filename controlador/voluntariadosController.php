@@ -85,10 +85,7 @@ function InsertarVoluntariados($nombres, $primer_apellido, $segundo_apellido, $f
  $statement->setFetchMode(PDO::FETCH_ASSOC);
  $res=$statement->fetchAll();
  return $res;
-}//c
-
-
-
+}
 $res=$i->ListarVoluntariados($data($res)>0){
 
 

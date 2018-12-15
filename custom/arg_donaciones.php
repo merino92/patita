@@ -34,11 +34,8 @@ class Donaciones { // clase Catoria
   }
 
   //function Actuzalizar(data)
-<<<<<<< HEAD
-  function ActualizarInventarios($idproductos, $existencias){
-=======
+
   function ActuzalizarInventarios($idproductos, $existencias){
->>>>>>> origin/master
    $conexion = Conectar();
    $sql = "UPDATE inventario SET idproducto=:idproducto and existencias=:existencias";
    $statement = $conexion->prepare($sql);
@@ -63,11 +60,5 @@ class Donaciones { // clase Catoria
    return $res;
   }//ciere de la funcion
 
-
-
-
-
 }
-
-
  ?>
