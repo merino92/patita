@@ -20,13 +20,7 @@ require_once "../../vistas/base/base.php";
             <thead>
               <tr class="bg-primary">
                 <th>Codigo/Id</th>
-                <th>Nombre del Padrino/Madrina</th>
-                <th>Edad</th>
-                <th>N° Dui</th>
-                <th>Dirección</th>
-                <th>Teléfonoo</th>
-                <th>E-mail</th>
-
+                <th>Nombre del Padrino/Madrina</th>  
               </tr>
 
               <tbody id="tabla1" class="tbody" ></tbody>
@@ -78,49 +72,6 @@ require_once "../../vistas/base/base.php";
                <input name="nombres" id="nombres" class="form-control" type="text" placeholder="Nombres">
            </div>
        </div>
-       <div class="form-group">
-           <label for="edad" class="col-sm-3 control-label">Edad</label>
-           <div class="col-sm-8">
-               <input name="edad" id="edad" class="form-control" type="text" placeholder="Edad">
-           </div>
-       </div>
-       <div class="form-group">
-           <label for="dui" class="col-sm-3 control-label">N° Dui</label>
-           <div class="col-sm-8">
-               <input name="dui" id="dui" class="form-control" type="text" placeholder="N° Dui">
-           </div>
-         </div>
-       <div class="form-group">
-           <label for="direccion" class="col-sm-3 control-label">Dirección</label>
-           <div class="col-sm-8">
-               <input name="direccion" id="direccion" class="form-control" type="text" placeholder="Dirección">
-           </div>
-       </div>
-       <div class="form-group">
-           <label for="telefono" class="col-sm-3 control-label">Teléfono</label>
-           <div class="col-sm-8">
-               <input name="telefono" id="telefono" class="form-control" type="text" placeholder="Teléfono">
-           </div>
-       </div>
-
-         <div class="form-group">
-             <label for="email" class="col-sm-3 control-label">E-mail</label>
-             <div class="col-sm-8">
-                 <input name="email" id="email" class="form-control" type="email" placeholder="E-mail">
-             </div>
-         </div>
-         <div class="form-group">
-             <label for="email" class="col-sm-3 control-label">Departamento</label>
-             <div class="col-sm-8">
-                 <select class="form-control" id="depar" name="depar"></select>
-             </div>
-         </div>
-         <div class="form-group">
-             <label for="email" class="col-sm-3 control-label">Municipio</label>
-             <div class="col-sm-8">
-                <select class="form-control" id="municipio" name="municipio"></select>
-             </div>
-         </div>
 
      </div>
 
