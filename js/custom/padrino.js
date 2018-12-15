@@ -155,7 +155,7 @@ console.log(objecto);
               if(item.respuesta>0){
                 ListarPadrinos();
                 $("#modal_form").modal('hide');
-
+                  Limpiar();
                 swal({
                                  type: "success",
                                  title: 'Exito!!',
@@ -245,7 +245,7 @@ $("#depar").html(null);
 }
 
 
-function ListarMunicipio(id){
+function ListarMunicipio(id,res){
 
   var objecto={
   "funcion":6,
@@ -267,7 +267,9 @@ $("#municipio").html(null);
 
 
                });
-
+               if(res!=null){
+                 $("#municipio").val(res);
+               }
            },
            error: function (errormessage) {
                alert(errormessage.responseText);
@@ -368,3 +370,156 @@ function ValidarCampos(){
   }
 return res;
 } //valida los
+
+
+
+function Limpiar(){
+$("#direccion").val(null);
+$("#telefono1").val(null);
+$("#dui").val(null);
+$("#edad").val(null);
+$("#nombres").val(null);
+$("#idpadrino").val(null);
+}
+
+var idpadrino=0;
+function Editarpadrino(){
+  var res=ValidarCampos();
+  console.log(res);
+  if(res==true){
+    var nombres=SepararNombres();
+    var objecto={};
+    if(nombres.length>3){
+      objecto={
+        "funcion":3,
+       "codigo":$("#idpadrino").val(),
+       "nombres":nombres[0]+" "+nombres[1],
+       "primer_apellido":nombres[2],
+       "segundo_apellido":nombres[3],
+       "edad":parseInt($("#edad").val()),
+       "celular":$("#telefono1").val(),
+       "dui":$("#dui").val(),
+       "direccion":$("#direccion").val(),
+       "email":$("#email").val(),
+       "iddepartamento":$("#depar").val(),
+       "idmunicipio":$("#municipio").val(),
+       "idpadrinos":idpadrino
+
+     };
+
+   }else{
+     objecto={
+       "funcion":2,
+      "codigo":$("#idpadrino").val(),
+      "nombres":nombres[0]+" "+nombres[1],
+      "primer_apellido":nombres[2],
+      "segundo_apellido":" ",
+      "edad":parseInt($("#edad").val()),
+      "celular":$("#telefono1").val(),
+      "dui":$("#dui").val(),
+      "direccion":$("#direccion").val(),
+      "email":$("#email").val(),
+      "iddepartamento":$("#depar").val(),
+      "idmunicipio":$("#municipio").val(),
+      "idpadrinos":idpadrino
+
+    };
+   }
+  console.log(objecto);
+   $.ajax({
+          url: "../../controlador/PadrinoController.php",
+          type: "POST",
+          data:JSON.stringify(objecto),
+          contentType: "application/json;charset=utf-8",
+          dataType: "json",
+          success: function (result) {
+            $.each(result,function(i,item){
+
+                if(item.respuesta>0){
+                  ListarPadrinos();
+                  $("#modal_form").modal('hide');
+                    Limpiar();
+                  swal({
+                                   type: "success",
+                                   title: 'Exito!!',
+                                   text: 'Ingresado',
+                                   showCancelButton: false, // There won't be any cancel button
+                                   showConfirmButton: false,
+                                   timer: 2000
+                               });
+
+                }else if(item.respuesta=="SIN SESION") {
+
+                }else {}
+
+            });
+
+          },
+          error: function (errormessage) {
+            console.log(errormessage);
+              alert(errormessage.responseText);
+          }
+      });
+
+
+
+  }else{
+
+    swal({
+                     type: "warning",
+                     title: 'Error!!',
+                     text: 'Campos Vacios',
+                     showCancelButton: false, // There won't be any cancel button
+                     showConfirmButton: false,
+                     timer: 2000
+                 });
+  }
+
+
+}
+
+function Editar(id){
+  idpadrino=id;
+  var objecto={
+  "funcion":5,
+  "idpadrino":id
+  };
+
+    $.ajax({
+           url: "../../controlador/PadrinoController.php",
+           type: "POST",
+           data:JSON.stringify(objecto),
+           contentType: "application/json;charset=utf-8",
+           dataType: "json",
+           success: function (result) {
+             console.log(result);
+               var html = '';
+               var muni;
+               var depa;
+               $.each(result, function (key, item) {
+
+                 $("#direccion").val(item.direccion);
+                 $("#telefono1").val(item.celular);
+                 $("#dui").val(item.dui);
+                 $("#edad").val(item.edad);
+                 $("#nombres").val(item.nombres+" "+item.primer_apellido+" "+item.segundo_apellido);
+                 $("#idpadrino").val(item.cod_padrino);
+                 $("#email").val(item.correo);
+                $("#depar").val(item.iddepartamento);
+                  muni=parseInt(item.idmunicipio);
+                   ListarMunicipio(item.iddepartamento,muni);
+
+               });
+
+               $("#modal_form").modal('show');
+
+
+           },
+           error: function (errormessage) {
+               alert(errormessage.responseText);
+           }
+       });
+
+
+
+}

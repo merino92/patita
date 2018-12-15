@@ -22,7 +22,8 @@ $variable=$json['funcion'];
 $i=new Padrino();
 
 if(!isset($_SESSION['usuario'])){
-  header('Location: ../vistas/login/login.php'); //retorna al login en caso no haya session
+
+echo  header('Location: ../vistas/login/login.php'); //retorna al login en caso no haya session
 }else{
 if(sizeof($variable)==0){
 
@@ -50,11 +51,14 @@ if(sizeof($variable)==0){
         echo json_encode($i->EliminarPadrino($json));
 
 
+      break;
+    case 5:
+    $id=$json["idpadrino"];
 
+      echo json_encode($i->Listid($id));
       break;
     default:
-      // code...
-      break;
+    break;
 }
 }
 }
