@@ -78,6 +78,10 @@ Agregar Municipios
       <div class="form-group">
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6d2efc9dc61c5138c0eaf28c45f2eca2aab61bd9
 =======
 
 >>>>>>> 6d2efc9dc61c5138c0eaf28c45f2eca2aab61bd9
@@ -86,6 +90,11 @@ Agregar Municipios
           <button  type="button" id="btnactualizar" onclick="Actualizar()" class="btn btn-info btn-sm btn-labeled ">Actualizar</button>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 6d2efc9dc61c5138c0eaf28c45f2eca2aab61bd9
 =======
 
 
