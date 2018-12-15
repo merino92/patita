@@ -79,10 +79,10 @@
 
 
         <p class="btnderecha">  <button  type="button" id="btnagregar" onclick="Insertar()" class="btn btn-success btn-sm btn-labeled ">Agregar</button>
-          <button  type="button" id="btnactualizar" class="btn btn-info btn-sm btn-labeled ">Actualizar</button>
+          <button  type="button" id="btnactualizar" onclick="Actualizar()" class="btn btn-info btn-sm btn-labeled ">Actualizar</button>
 
 
-        
+
 
          <button  type="button" data-dismiss="modal"  id="btncancelar" class="btn btn-danger btn-sm btn-labeled ">Cancelar</button></p>
 

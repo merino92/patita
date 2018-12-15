@@ -10,6 +10,7 @@ $("#btnmodal").click(function(){
   $('#btnactualizar').hide();
   $("#nombre").val(null);
   $("#depar").val(1);
+  $("#btnagregar").show();
 });
 
 });
@@ -172,7 +173,8 @@ console.log(objecto);
 var id=0;
 function Editar(numero){
 id=numero;
-
+$("#btnagregar").hide();
+$("#btnactualizar").show();
 var objecto={
   "funcion":5,
   "iddepartamentos":numero};
