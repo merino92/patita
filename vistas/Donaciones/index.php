@@ -21,7 +21,7 @@ require_once "../../vistas/base/base.php";
      <div class="table_responsive">
        <table class="table table-xs">
          <thead>
-           <tr>
+           <tr class="bg-primary">
              <th>Codigo/Id</th>
              <th>Nombre del Producto</th>
              <th>Cantidad</th>
@@ -105,8 +105,8 @@ require_once "../../vistas/base/base.php";
    <div class="row">
      <div class="col-sm-12 col-md-12 col-lg -12">
        <div class="form-group">
-         <p class="btnderecha">  <button  type="button" id="btnguardar" class="btn btn-success btn-sm btn-labeled ">Guardar</button>
-           <button  type="button" id="btnactualizar" class="btn btn-success btn-sm btn-labeled ">Actualizar</button>
+         <p class="btnderecha">  <button  type="button" id="btnguardar" class="btn btn-primary btn-sm btn-labeled ">Guardar</button>
+           <button  type="button" id="btnactualizar" class="btn btn-info btn-sm btn-labeled ">Actualizar</button>
           <button  type="button" data-dismiss="modal" id="btncancelar" class="btn btn-danger btn-sm btn-labeled ">Cancelar</button></p>
        </div>
        </div>

@@ -16,7 +16,7 @@ Agregar Departamentos
   <div class="table_responsive">
     <table class="table table-xs">
       <thead>
-        <tr>
+        <tr class="bg-primary">
           <td>CODIGO</td>
           <td>NOMBRE</td>
           <td>CODIGO POSTAL</td>
