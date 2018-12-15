@@ -10,6 +10,7 @@ $("#btnmodal").click(function(){
   $('#btnactualizar').hide();
   $("#nombre").val(null);
   $("#depar").val(1);
+  $("#btnagregar").show();
 });
 
 });
@@ -172,7 +173,8 @@ console.log(objecto);
 var id=0;
 function Editar(numero){
 id=numero;
-
+$("#btnagregar").hide();
+$("#btnactualizar").show();
 var objecto={
   "funcion":5,
   "iddepartamentos":numero};
@@ -234,7 +236,8 @@ if(res==true){
   var objecto={
     "funcion":3,
     "municipio":$("#nombre").val(),
-    "iddepartamento":parseInt($("#depar").val())
+    "iddepartamento":parseInt($("#depar").val()),
+    "idmunicipios":id
   };
 console.log(objecto);
   $.ajax({
@@ -291,7 +294,4 @@ console.log(objecto);
                    showConfirmButton: false,
                    timer: 2000
                });  }
-}
-
-
 }
