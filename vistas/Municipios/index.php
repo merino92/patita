@@ -20,6 +20,7 @@ Agregar Municipios
         <tr class="bg-primary">
           <td>CODIGO</td>
           <td>NOMBRE</td>
+        <td>OPCIONES</td>
         </tr>
       </thead>
       <tbody id="cuerpo" class="tbody">
