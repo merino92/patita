@@ -7,14 +7,8 @@ $clase= new Mascotas();
 
 function ListarMascotas(){
 
-
 return json_encode($clase->ListarMascotas());
-
-
 }
-
-
-
 }
 
  ?>

@@ -236,7 +236,8 @@ if(res==true){
   var objecto={
     "funcion":3,
     "municipio":$("#nombre").val(),
-    "iddepartamento":parseInt($("#depar").val())
+    "iddepartamento":parseInt($("#depar").val()),
+    "idmunicipios":id
   };
 console.log(objecto);
   $.ajax({
@@ -293,7 +294,4 @@ console.log(objecto);
                    showConfirmButton: false,
                    timer: 2000
                });  }
-}
-
-
 }
