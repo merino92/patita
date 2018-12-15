@@ -48,14 +48,8 @@ class Adopciones{ //clase adopciones
   }//cierre de funcion
 
   //function Actuzalizar(data)
-<<<<<<< HEAD
 
-
-
-=======
   function ActuzalizarAdopciones($cod_adopcion, $idmascota,$nombre_adopta,$apellido_adopta, $iddepartamento, $idmunicipio,$direccion,$iddocumento,$n_documento,$tel_casa,$fecha_adopcion){
->>>>>>> origin/master
->>>>>>> f4c6d3da8c4959e8555278c5bf36540afc46361e
    $conexion = Conectar();
    $sql = "UPDATE adopciones SET cod_adopcion=:cod_adopcion and idmascota=:idmascota and nombre_adopta=:nombre_adopta and apellido_adopta=:apellido_adopta and iddepartamento=:iddepartamento and idmunicipio=:idmunicipio and direccion=:direccion and iddocumento=:iddocumento and n_documento=:n_documento and tel_casa=:tel_casa and fecha_adopcion=:fecha_adopcion ";
    $statement = $conexion->prepare($sql);
