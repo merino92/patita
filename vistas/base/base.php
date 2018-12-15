@@ -105,7 +105,7 @@ require_once '../../vistas/ti.php';
                     <a class="themeBtn2" href="../../controlador/DepartamentoController.php"><span class="glyphicon glyphicon-globe"></span>Departamentos</a>
                </li>
                <li>
-                    <a class="themeBtn2" href="../../controlador/MunicipioController.php"><span class="glyphicon glyphicon-globe"></span>Municipio</a>
+                    <a class="themeBtn2" href="../../controlador/MunicipiosController.php"><span class="glyphicon glyphicon-globe"></span>Municipio</a>
                </li>
                <li>
                    <a class="themeBtn2" href="#">About</a>
