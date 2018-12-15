@@ -105,14 +105,9 @@ Agregar Usuarios
     <div class="col-sm-12 col-md-12 col-lg -12">
       <div class="form-group">
 
-<<<<<<< HEAD
-        <p class="btnderecha">  <button  type="button" id="btnagregar" class="btn btn-primary btn-sm btn-labeled ">Agregar</button>
-          <button  type="button" id="btnactualizar" class="btn btn-info btn-sm btn-labeled ">Actualizar</button>
-=======
         <p class="btnderecha">  <button  type="button" id="btnagregar" class="btn btn-success btn-sm btn-labeled ">Agregar</button>
           <button  type="button" id="btnactualizar" class="btn btn-success btn-sm btn-labeled ">Actualizar</button>
           <button  type="button" id="btnagregar" class="btn btn-success btn-sm btn-labeled ">Agregar Nuevo</button>
->>>>>>> b8c7aab072c3edca83f3836b5b3f8a19a0330d33
          <button  type="button" data-dismiss="modal"  id="btncancelar" class="btn btn-danger btn-sm btn-labeled ">Cancelar</button></p>
 
       </div>

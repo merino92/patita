@@ -19,16 +19,11 @@ require_once "../../vistas/base/base.php";
           <table class="table table-xs">
             <thead>
               <tr class="bg-primary">
-<<<<<<< HEAD
                 <th>Codigo</th>
                 <th>Nombre del Padrino/Madrina</th>
 
                 <th>Opciones</th>
 
-=======
-                <th>Codigo/Id</th>
-                <th>Nombre del Padrino/Madrina</th>
->>>>>>> b8c7aab072c3edca83f3836b5b3f8a19a0330d33
               </tr>
 
               <tbody id="tabla1" class="tbody" ></tbody>
@@ -134,14 +129,9 @@ require_once "../../vistas/base/base.php";
   <div class="row">
     <div class="col-sm-12 col-md-12 col-lg -12">
       <div class="form-group">
-<<<<<<< HEAD
         <p class="btnderecha">  <button  type="button" id="btnguardar" onclick="AgregarPadrino()" class="btn btn-primary btn-sm btn-labeled ">Guardar</button>
           <button  type="button" id="btnactualizar" onclick="Editarpadrino()" class="btn btn-info btn-sm btn-labeled ">Actualizar</button>
-=======
-        <p class="btnderecha">  <button  type="button" id="btnguardar" class="btn btn-primary btn-sm btn-labeled ">Guardar</button>
-          <button  type="button" id="btnactualizar" class="btn btn-info btn-sm btn-labeled ">Actualizar</button>
-          <button  type="button" id="btnagregar" class="btn btn-info btn-sm btn-labeled ">Agregar Nuevo</button>
->>>>>>> b8c7aab072c3edca83f3836b5b3f8a19a0330d33
+
          <button  type="button" data-dismiss="modal" id="btncancelar" class="btn btn-danger btn-sm btn-labeled ">Cancelar</button></p>
 
       </div>

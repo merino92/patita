@@ -60,7 +60,7 @@ function ActualizarPadrino($data){
   $code=$data['codigo'];
   $idpadrinos=$data['idpadrinos'];
   $sql = "call update_padrino(:nombre,:primer_apellido,:segundo_apellido,
-          :iddepartamento,:idmunicipio,:correo,:celular,:direccion,:edad,:codigo,:id@res)";
+          :iddepartamento,:idmunicipio,:correo,:celular,:direccion,:edad,:codigo,:id,@res)";
   $statement = $conexion->prepare($sql);
   $statement->bindParam(':nombre', $nombres);
   $statement->bindParam(':primer_apellido', $pa);
@@ -72,7 +72,7 @@ function ActualizarPadrino($data){
   $statement->bindParam(':direccion', $dir);
   $statement->bindParam(':edad', $edad);
   $statement->bindParam(':codigo', $code);
-  $statement->bindParam(':codigo', $idpadrinos);
+  $statement->bindParam(':id', $idpadrinos);
   $statement->execute();
   $statement->closeCursor();
   $dato=$conexion->query('select @res as respuesta')->fetchAll(PDO::FETCH_ASSOC);
@@ -81,15 +81,17 @@ function ActualizarPadrino($data){
 }//ciere de la funcion
 
 //function Eliminar(data)
-function EliminarPadrino($idpadrinos){
+function EliminarPadrino($data){
+  $idpadrinos=$data['id'];
  $conexion = Conectar();
- $sql = "DELETE FROM padrinos WHERE id=:idpadrinos";
+ $sql = "call elimina_padrino(:idpadrinos,@res)";
  $statement = $conexion->prepare($sql);
  $statement->bindParam(':idpadrinos',$idpadrinos );
  $statement->execute();
  $statement->setFetchMode(PDO::FETCH_ASSOC);
- $res=$statement->fetchAll();
- return $res;
+ $statement->closeCursor();
+ $dato=$conexion->query('select @res as respuesta')->fetchAll(PDO::FETCH_ASSOC);
+ return $dato;
 }//ciere de la funcion
 
 function Listid($id){
@@ -100,7 +102,7 @@ function Listid($id){
   $statement->execute();
   $statement->setFetchMode(PDO::FETCH_ASSOC);
   $res=$statement->fetchAll();
-  
+
   return $res;
 }
 

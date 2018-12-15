@@ -442,7 +442,7 @@ function Editarpadrino(){
                   swal({
                                    type: "success",
                                    title: 'Exito!!',
-                                   text: 'Ingresado',
+                                   text: 'Actualizado',
                                    showCancelButton: false, // There won't be any cancel button
                                    showConfirmButton: false,
                                    timer: 2000
@@ -520,6 +520,87 @@ function Editar(id){
            }
        });
 
+
+
+}
+
+function Delete(id){
+  var res=ObtenerNombre(id);
+  swal({
+        title: 'Advertencia!',
+        text: '¿Estas seguro de eliminar a '+res+' ?!!',
+        type: 'warning',
+        confirmButtonText: 'Eliminar',
+        cancelButtonText:'Cancelar',
+        showCancelButton: "cancelar",
+        confirmButtonColor: '#F05534',
+         closeOnConfirm: false
+    }, function (isConfirm) {
+
+        if (isConfirm) {
+            elimina(id);
+
+        }
+    });
+}
+
+function ObtenerNombre(id) {
+
+    var res = $("#" + id).find('td:eq(1)').html();
+    return res;
+}
+
+
+function elimina(id){
+
+var objecto={
+  "funcion":4,
+  "id":id
+};
+$.ajax({
+       url: "../../controlador/PadrinoController.php",
+       type: "POST",
+       data: JSON.stringify(objecto),
+       contentType: "application/json;charset=utf-8",
+       dataType: "json",
+       success: function (result) {
+         console.log(result);
+         $.each(result,function(i,item){
+
+           if(item.respuesta>0){
+                   ListarPadrinos();
+                 swal({
+                         type: "success",
+                                  title: 'Exito!!',
+                                  text: 'Actualizado Correctamente',
+                                  showCancelButton: false, // There won't be any cancel button
+                                  showConfirmButton: false,
+                                  timer: 2000
+                              });
+
+
+             }else{
+               swal({
+                       type: "error",
+                                title: 'Error!!',
+                                text: 'Algo salio mal',
+                                showCancelButton: false, // There won't be any cancel button
+                                showConfirmButton: false,
+                                timer: 2000
+                            });
+             }
+
+         });
+
+
+
+
+
+       },
+       error: function (errormessage) {
+           alert(errormessage.responseText);
+       }
+   });
 
 
 }
