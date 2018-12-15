@@ -39,6 +39,20 @@ function ListarId($id){
 
 }
 
+function InsertarMunicipio($data){
+$muni=$data['municipio'];
+$depar=$data['iddepartamento'];
+$con=Conectar();
+$sql='call update_municipio(:nombre,:departamento,@dato)';
+$data=$con->prepare($sql);
+$data->bindParam(":nombre",$muni);
+$data->bindParam(":departamento",$depar);
+$data->execute();
+$data->closeCursor();
+$res=$con->query('select @dato as respuesta')->fetchAll();
+return $res;
+}
+
 
 }
 

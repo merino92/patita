@@ -33,11 +33,6 @@ if(!isset($_SESSION['usuario'])){
   $objecto=new Municipio();
     switch ($variable) {
       case 1:
-
-
-      
-
-
       $data=$objecto->ListarMunicipio();
       echo json_encode($data);
         break;
@@ -47,6 +42,8 @@ if(!isset($_SESSION['usuario'])){
 
         break;
       case 3:
+      $data=$objecto->UpdateMunicipio($json);
+      echo json_encode($data);
       break;
       case 4:
       break;
