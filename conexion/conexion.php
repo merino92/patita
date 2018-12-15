@@ -4,7 +4,6 @@ $hola;
 
 function Conectar(){
 
-$con;
 
   $parametros=file_get_contents("../configuracion.json");//obtengo el json guardado en el archivo configuracion.json
   //decodifica el json_decode

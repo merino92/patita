@@ -1,88 +1,61 @@
 <?php
 
 session_start();
-function VerificarSesion(){
+require_once '../custom/arg_Padrino.php';
 
-  if(!isset($_SESSION))
-  {
-        return True;
+$json=null;
+$variable=null;
+if($_SERVER['REQUEST_METHOD'] == 'GET'){
 
-  }else
-  {
-      return False;
-  }
-
-}
-
-include('../custom/padrino.php');
-include('../custom/arg_Padrino.php');
-require_once '../conexion/conexion.php';
-$i=new arg_Padrino();
-$data=json_decode(file_get_contents('php://input'),true);
-$i=new Padrino();
-
-if(sizeof($data)>0){
-
-$funcion=$data['funcion'];
-
-switch ($funcion) {
-  case 1:
-        $sesion=VerificarSesion();
-        if($session==True){
-          echo json_enconde($i->ListarPadrino());
-        }else{
-          session_destroy();
-          header('Location: ../vistas/login/login.php');
-        }
-
-    break; //listar
-    case 2:
-    $sesion=VerificarSesion();
-    if($session==True){
-    echo json_enconde($i->InsertarPadrino($data));
-    }else{
-      session_destroy();
-      header('Location: ../vistas/login/login.php');
-    }
-
-    break;//insertar
-    case 3:
-    $sesion=VerificarSesion();
-    if($session==True){
-      echo json_enconde($i->ActualizarPadrino($data));
-    }else{
-      session_destroy();
-      header('Location: ../vistas/login/login.php');
-    }
-
-    break;
-    case 4:
-    $sesion=VerificarSesion();
-    if($session==True){
-      echo json_enconde($i->EliminarPadrino($data));
-    }else{
-      session_destroy();
-      header('Location: ../vistas/login/login.php');
-    }
-
-
-    break;
-  default:
-    // code...
-    break;
-}
-
+  $variable=$_GET['funcion'];
 
 }else{
 
-  if(isset($_SESSION['usuario'])){
-        session_destroy();
-        header('Location: ../vistas/login/login.php');
+$json=json_decode(file_get_contents('php://input'),true);
+$variable=$json['funcion'];
 
-  }else{
-        header('Location: ../vistas/Apadrinamiento/index.php');
-  }
+}//verifica
+//include('../custom/padrino.php');
+//require_once '../conexion/conexion.php';
+
+
+$i=new Padrino();
+
+if(!isset($_SESSION['usuario'])){
+  header('Location: ../vistas/login/login.php'); //retorna al login en caso no haya session
+}else{
+if(sizeof($variable)==0){
+
+}else{
+  switch ($variable) {
+    case 1:
+
+          echo json_encode($i->ListarPadrino());
+
+
+      break; //listar
+      case 2:
+
+      echo json_encode($i->InsertarPadrino($json));
+
+      break;//insertar
+      case 3:
+
+        echo json_encode($i->ActualizarPadrino($json));
+
+      break;
+      case 4:
+
+
+        echo json_encode($i->EliminarPadrino($json));
+
+
+
+      break;
+    default:
+      // code...
+      break;
 }
-
-
+}
+}
 ?>

@@ -38,17 +38,7 @@ function ListarId($id){
   return $res;
 
 }
-function ListarId($id){
-  $con=Conectar();
-  $sql='select * from municipios where idmunicipios=:id';
-  $data=$con->prepare($sql);
-  $data->bindParam(":id",$id);
-  $data->execute();
-  $data->setFetchMode(PDO::FETCH_ASSOC);
-  $res=$data->fetchAll();
-  return $res;
 
-}
 function ListarIddepar($id){
   $con=Conectar();
   $sql='select * from municipios where idepartamento=:id';

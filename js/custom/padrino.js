@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+ListarPadrinos();
 ListarDepartamentos();
 
 }); //funcion que se carga cuando inicia la pagina
@@ -11,190 +11,159 @@ ListarDepartamentos();
 
 $(function(){
 
-$("#idpadrino").change(function(){
+  $("#idpadrino").change(function(){
 
-console.log('entra');
-  var dato=$("#idpadrino").val();
+  console.log('entra');
+    var dato=$("#idpadrino").val();
 
-  if(dato==''|| dato==null){
-       $('#idpadrino').css('border-color', 'Red');
+    if(dato==''|| dato==null){
+         $('#idpadrino').css('border-color', 'Red');
 
-  }else{
+    }else{
 
-       $('#idpadrino').css('border-color', 'lightgrey');
-  }
-}); //funcion que revisa el campo inmediatamente cuando se escribe
+         $('#idpadrino').css('border-color', 'lightgrey');
+    }
+  }); //funcion que revisa el campo inmediatamente cuando se escribe
 
-$("#nombres").change(function(){
-  var dato=$("#nombres").val();
-  if(dato==''|| dato ==null){
+  $("#nombres").change(function(){
+    var dato=$("#nombres").val();
+    if(dato==''|| dato ==null){
 
-    $("#nombres").css('border-color','Red');
-  }else{
+      $("#nombres").css('border-color','Red');
+    }else{
 
-     $('#nombres').css('border-color', 'lightgrey');
-  }
-});
+       $('#nombres').css('border-color', 'lightgrey');
+    }
+  });
 
-$("#edad").change(function(){
-  var dato=$("#edad").val();
-  if(dato==''|| dato ==null || dato <=0){
+  $("#edad").change(function(){
+    var dato=$("#edad").val();
+    if(dato==''|| dato ==null || dato <=0){
 
-    $("#edad").css('border-color','Red');
-  }else{
+      $("#edad").css('border-color','Red');
+    }else{
 
-     $('#edad').css('border-color', 'lightgrey');
-  }
-});
+       $('#edad').css('border-color', 'lightgrey');
+    }
+  });
 
-$("#dui").change(function(){
-  var dato=$("#dui").val();
-  if(dato==''|| dato ==null){
+  $("#dui").change(function(){
+    var dato=$("#dui").val();
+    if(dato==''|| dato ==null){
 
-    $("#dui").css('border-color','Red');
-  }else{
+      $("#dui").css('border-color','Red');
+    }else{
 
-     $('#dui').css('border-color', 'lightgrey');
-  }
-});
+       $('#dui').css('border-color', 'lightgrey');
+    }
+  });
 
-$("#direccion").change(function(){
-  var dato=$("#direccion").val();
-  if(dato==''|| dato ==null){
+  $("#direccion").change(function(){
+    var dato=$("#direccion").val();
+    if(dato==''|| dato ==null){
 
-    $("#direccion").css('border-color','Red');
-  }else{
+      $("#direccion").css('border-color','Red');
+    }else{
 
-     $('#direccion').css('border-color', 'lightgrey');
-  }
-});
+       $('#direccion').css('border-color', 'lightgrey');
+    }
+  });
 
-$("#telefono").change(function(){
-  var dato=$("telefono").val();
-  if(dato==''|| dato ==null){
+  $("#telefono").change(function(){
+    var dato=$("telefono").val();
+    if(dato==''|| dato ==null){
 
-    $("#telefono").css('border-color','Red');
-  }else{
+      $("#telefono1").css('border-color','Red');
+    }else{
 
-     $('#telefono').css('border-color', 'lightgrey');
-  }
-});
+       $('#telefono1').css('border-color', 'lightgrey');
+    }
+  });
 
-$("#email").change(function(){
-  var dato=$("#email").val();
-  if(dato==''|| dato ==null){
+  $("#email").change(function(){
+    var dato=$("#email").val();
+    if(dato==''|| dato ==null){
 
-    $("#email").css('border-color','Red');
-  }else{
+      $("#email").css('border-color','Red');
+    }else{
 
-     $('#email').css('border-color', 'lightgrey');
-  }
-});
+       $('#email').css('border-color', 'lightgrey');
+    }
+  });
+  $("#depar").change(function(){
 
+    var departamento=$("#depar").val();
+    ListarMunicipio(departamento);
+  });
 });
 //funcion para validar los campos
 
-
-function ValidarCampos(){
-var res=true;
-
-if($("#idpadrino").val().trim()==""){
-  res=false;
-  $("#idpadrino").css('border-color','Red');
-}else{
-  $('#idpadrino').css('border-color', 'lightgrey');
-}
-
-
-if($("#nombres").val().trim()==""){
-  res=false;
-  $("#nombres").css('border-color','Red');
-}else{
-  $('#nombres').css('border-color', 'lightgrey');
-}
-
-if($("#edad").val().trim()==""){
-  res=false;
-  $("#edad").css('border-color','Red');
-}else{
-  $('#edad').css('border-color', 'lightgrey');
-}
-
-if($("#dui").val().trim()==""){
-  res=false;
-  $("#dui").css('border-color','Red');
-}else{
-  $('#dui').css('border-color', 'lightgrey');
-}
-
-
-if($("#direccion").val().trim()==""){
-  res=false;
-  $("#direccion").css('border-color','Red');
-}else{
-  $('#direccion').css('border-color', 'lightgrey');
-}
-
-
-if($("#telefono").val().trim()==""){
-  res=false;
-  $("#telefono").css('border-color','Red');
-}else{
-  $('#telefono').css('border-color', 'lightgrey');
-}
-return res;
-} //valida los campos del formulario
+ //campos del formulario
 
 
 
 function AgregarPadrino(){
-var res=ValidarCampos;
-
+var res=ValidarCampos();
+console.log(res);
 if(res==true){
   var nombres=SepararNombres();
   var objecto={};
   if(nombres.length>3){
     objecto={
-      "funcion":3,
+      "funcion":2,
      "codigo":$("#idpadrino").val(),
      "nombres":nombres[0]+" "+nombres[1],
      "primer_apellido":nombres[2],
      "segundo_apellido":nombres[3],
      "edad":parseInt($("#edad").val()),
-     "telefono":$("#telefono").val(),
+     "celular":$("#telefono1").val(),
      "dui":$("#dui").val(),
      "direccion":$("#direccion").val(),
-     "email":$("#email").val()
+     "email":$("#email").val(),
+     "iddepartamento":$("#depar").val(),
+     "idmunicipio":$("#municipio").val()
 
    };
 
  }else{
    objecto={
-     "funcion":3,
+     "funcion":2,
     "codigo":$("#idpadrino").val(),
     "nombres":nombres[0]+" "+nombres[1],
     "primer_apellido":nombres[2],
     "segundo_apellido":" ",
     "edad":parseInt($("#edad").val()),
-    "telefono":$("#telefono").val(),
+    "celular":$("#telefono1").val(),
     "dui":$("#dui").val(),
     "direccion":$("#direccion").val(),
-    "email":$("#email").val()
+    "email":$("#email").val(),
+    "iddepartamento":$("#depar").val(),
+    "idmunicipio":$("#municipio").val()
 
   };
  }
-
+console.log(objecto);
  $.ajax({
-        url: "../../controlador/PadrinosController.php",
+        url: "../../controlador/PadrinoController.php",
         type: "POST",
-        data:JSON.stringify(object),
+        data:JSON.stringify(objecto),
         contentType: "application/json;charset=utf-8",
         dataType: "json",
         success: function (result) {
           $.each(result,function(i,item){
 
-              if(item.respuesta=="EXITO"){
+              if(item.respuesta>0){
+                ListarPadrinos();
+                $("#modal_form").modal('hide');
 
+                swal({
+                                 type: "success",
+                                 title: 'Exito!!',
+                                 text: 'Ingresado',
+                                 showCancelButton: false, // There won't be any cancel button
+                                 showConfirmButton: false,
+                                 timer: 2000
+                             });
 
               }else if(item.respuesta=="SIN SESION") {
 
@@ -227,8 +196,8 @@ if(res==true){
 }
 
 function SepararNombres(){
-  var nombre=$("nombres").val();
-  var cadena=nombre.str.split(" ");
+  var nombre=$("#nombres").val();
+  var cadena=nombre.split(" ");
   var matriz=[];
   for(var i=0;i<=cadena.length;i++){
     var dato=cadena[i];
@@ -274,3 +243,128 @@ $("#depar").html(null);
 
 
 }
+
+
+function ListarMunicipio(id){
+
+  var objecto={
+  "funcion":6,
+  "iddepartamentos":id
+  };
+$("#municipio").html(null);
+    $.ajax({
+           url: "../../controlador/MunicipiosController.php",
+           type: "POST",
+           data: JSON.stringify(objecto),
+           contentType: "application/json;charset=utf-8",
+           dataType: "json",
+           success: function (result) {
+             console.log(result);
+               var html = '';
+               $.each(result, function (key, item) {
+
+                 $("#municipio").append('<option value="' + item.idmunicipios + '">' + item.municipio + '</option>');
+
+
+               });
+
+           },
+           error: function (errormessage) {
+               alert(errormessage.responseText);
+           }
+       });
+}
+
+function ListarPadrinos(){
+  var objecto={
+  "funcion":1,
+  };
+$("#tabla1").html(null);
+    $.ajax({
+           url: "../../controlador/PadrinoController.php",
+           type: "GET",
+           data: objecto,
+           contentType: "application/json;charset=utf-8",
+           dataType: "json",
+           success: function (result) {
+             console.log(result);
+               var html = '';
+               $.each(result, function (key, item) {
+
+
+                       html += '<tr id=' + item.idpadrinos + '>';
+                       html += '<td>' + item.cod_padrino + '</td>';
+                       html += '<td>'+(item.nombres+" "+item.primer_apellido)+'</td>';
+                       html += '<td><a href="#" onclick="Editar(' + item.idpadrinos+')">Editar</a> | <a href="#" onclick="Delete(' + item.idpadrinos + ')">Eliminar</a></td>';
+                       html += '</tr>';
+
+               });
+                $('#tabla1').html(html);
+
+
+           },
+           error: function (errormessage) {
+               alert(errormessage.responseText);
+           }
+       });
+
+
+}
+
+
+function ValidarCampos(){
+    var res=true;
+    console.log('entra');
+  if($("#idpadrino").val()==" "){
+  res=false;
+  $("#idpadrino").css('border-color','Red');
+  }else{
+  $('#idpadrino').css('border-color', 'lightgrey');
+  res=true;
+  }
+
+  console.log(res);
+  if($("#nombres").val()==" "){
+  res=false;
+  $("#nombres").css('border-color','Red');
+  }else{
+  $('#nombres').css('border-color', 'lightgrey');
+  res=true;
+  }
+  console.log(res);
+  if($("#edad").val()==""){
+  res=false;
+  $("#edad").css('border-color','Red');
+  }else{
+  $('#edad').css('border-color', 'lightgrey');
+  res=true;
+  }
+  console.log(res);
+  if($("#dui").val().trim()==""){
+  res=false;
+  $("#dui").css('border-color','Red');
+  }else{
+  $('#dui').css('border-color', 'lightgrey');
+  res=true;
+  }
+  console.log(res);
+
+  if($("#direccion").val().trim()==""){
+  res=false;
+  $("#direccion").css('border-color','Red');
+  }else{
+  $('#direccion').css('border-color', 'lightgrey');
+  res=true;
+  }
+  console.log(res);
+
+  if($("#telefono1").val().trim()==""){
+  console.log($("#telefono").val());
+  res=false;
+  $("#telefono1").css('border-color','Red');
+  }else{
+  $('#telefono1').css('border-color', 'lightgrey');
+  res=true;
+  }
+return res;
+} //valida los

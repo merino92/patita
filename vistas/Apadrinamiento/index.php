@@ -19,13 +19,10 @@ require_once "../../vistas/base/base.php";
           <table class="table table-xs">
             <thead>
               <tr class="bg-primary">
-                <th>Codigo/Id</th>
+                <th>Codigo</th>
                 <th>Nombre del Padrino/Madrina</th>
-                <th>Edad</th>
-                <th>N° Dui</th>
-                <th>Dirección</th>
-                <th>Teléfonoo</th>
-                <th>E-mail</th>
+
+                <th>Opciones</th>
 
               </tr>
 
@@ -99,7 +96,7 @@ require_once "../../vistas/base/base.php";
        <div class="form-group">
            <label for="telefono" class="col-sm-3 control-label">Teléfono</label>
            <div class="col-sm-8">
-               <input name="telefono" id="telefono" class="form-control" type="text" placeholder="Teléfono">
+               <input id="telefono1" class="form-control" type="text" placeholder="Teléfono">
            </div>
        </div>
 
@@ -132,7 +129,7 @@ require_once "../../vistas/base/base.php";
   <div class="row">
     <div class="col-sm-12 col-md-12 col-lg -12">
       <div class="form-group">
-        <p class="btnderecha">  <button  type="button" id="btnguardar" class="btn btn-primary btn-sm btn-labeled ">Guardar</button>
+        <p class="btnderecha">  <button  type="button" id="btnguardar" onclick="AgregarPadrino()" class="btn btn-primary btn-sm btn-labeled ">Guardar</button>
           <button  type="button" id="btnactualizar" class="btn btn-info btn-sm btn-labeled ">Actualizar</button>
          <button  type="button" data-dismiss="modal" id="btncancelar" class="btn btn-danger btn-sm btn-labeled ">Cancelar</button></p>
 

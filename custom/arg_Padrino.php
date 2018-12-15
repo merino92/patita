@@ -1,39 +1,49 @@
 <?php
-include ('../../conexion/conexion.php'); //conexion con la base de datos
+require_once '../../conexion/conexion.php'; //conexion con la base de datos
 
 class Padrino{ //clase Padrino
 
   function ListarPadrino(){
   $rows = null;
-  $modelo = new Conexion()
-  $conexion = $modelo->get_conexion();
-  $sql = "select * from padrinos";
+
+  $conexion =Conectar();
+  $sql = "select * from padrinos where borrado=false";
   $statement = $conexion->prepare($sql);
   $statement->execute();
-  while ($result = $statement->fetch()){
-  $rows[] = $result;
+  $statement->setFetchMode(PDO::FETCH_ASSOC);
+  $res=$statement->fetchAll();
+  return $res;
 
-  }
-
-
-function InsertarPadrino($data)
+}
+function InsertarPadrino($data){
 $conexion = Conectar();
-$sql = "call InsertarPadrino(:nombre,:primer_apellido,:segundo_apellido,:fecha_nacimiento,
-        :iddepartamento,:idmunicipio,:tel_casa,:celular,direccion,:lugar_nacimiento,@res)";
+$nombres=$data['nombres'];
+$pa=$data['primer_apellido'];
+$sa=$data["segundo_apellido"];
+$depar=$data['iddepartamento'];
+$muni=$data['idmunicipio'];
+$tc=$data["email"];
+$cel=$data["celular"];
+$dir=$data['direccion'];
+$edad=$data['edad'];
+$code=$data['codigo'];
+$sql = "call Ingresar_padrino(:nombre,:primer_apellido,:segundo_apellido,
+        :iddepartamento,:idmunicipio,:correo,:celular,:direccion,:edad,:codigo,@res)";
 $statement = $conexion->prepare($sql);
-$statement->bindParam(':nombres', $data['nombres']);
-$statement->bindParam(':primer_apellido', $data['primer_apellido']);
-$statement->bindParam(':segundo_apellido', $data['segundo_apellido']);
-$statement->bindParam(':fecha_nacimiento', $data['fecha_nacimiento']);
-$statement->bindParam(':lugar_nacimiento', $data['lugar_nacimiento']);
-$statement->bindParam(':iddepartamento', $data['iddepartamento']);
-$statement->bindParam(':idmunicipio', $data['idmunicipio']);
-$statement->bindParam(':telefono_casa', $data['tel_casa']);
-$statement->bindParam(':celular', $data['celular']);
+$statement->bindParam(':nombre', $nombres);
+$statement->bindParam(':primer_apellido', $pa);
+$statement->bindParam(':segundo_apellido', $sa);
+$statement->bindParam(':iddepartamento', $depar);
+$statement->bindParam(':idmunicipio', $muni);
+$statement->bindParam(':correo', $tc);
+$statement->bindParam(':celular', $cel);
+$statement->bindParam(':direccion', $dir);
+$statement->bindParam(':edad', $edad);
+$statement->bindParam(':codigo', $code);
 $statement->execute();
 $statement->closeCursor();
-$dato=$conexion->query('select @res as respuesta')->fetch(PDO::FETCH_ASSOC);
-return $dato['respuesta'];
+$dato=$conexion->query('select @res as respuesta')->fetchAll(PDO::FETCH_ASSOC);
+return $dato;
 }
 
 function ActualizarPadrino($data){
@@ -68,6 +78,4 @@ function EliminarPadrino($idpadrinos){
  return $res;
 }//ciere de la funcion
 
-
-
- ?>
+}?>

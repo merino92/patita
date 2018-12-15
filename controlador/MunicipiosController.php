@@ -15,7 +15,6 @@ $variable=$json['funcion'];
 
 }//verifica que tipo de respuesta es
 
-
 if(!isset($_SESSION['usuario'])){
 
       header('Location: ../vistas/login/login.php'); //retorna al login en caso no haya session
@@ -23,6 +22,7 @@ if(!isset($_SESSION['usuario'])){
 
 }else{
   if(sizeof($variable)==0){
+    //echo(sizeof($variable));
 
     header('Location: ../vistas/Municipios/index.php');
   }else{
@@ -47,10 +47,15 @@ if(!isset($_SESSION['usuario'])){
       $data=$objecto->EliminarMunicipio($d);
       echo json_encode($data);
       break;
-      default:
+      case 5:
       $id=$json['iddepartamentos'];
       $data=$objecto->ListarId($id);
       echo json_encode($data);
+      break;
+      default:
+        $id=$json['iddepartamentos'];
+        $data=$objecto->ListarIddepar($id);
+        echo json_encode($data);
         break;
     }
 
