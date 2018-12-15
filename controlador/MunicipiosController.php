@@ -34,13 +34,8 @@ if(!isset($_SESSION['usuario'])){
     switch ($variable) {
       case 1:
 
-      $sesion=VerificarSesion();
-      if($session==True){
-      echo json_enconde($i->insetarMunicipio($data));
-      }else{
-        session_destroy();
-        header('Location: ../vistas/login/login.php');
-      }
+
+      
 
 
       $data=$objecto->ListarMunicipio();
