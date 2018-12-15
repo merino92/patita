@@ -41,7 +41,29 @@ function Listar(){
                        html += '</tr>';
 
                });
-               $('#cuerpo').html(html);
+                $('#cuerpo').html(html);
+               $('#tabla').DataTable({
+                "language": {
+                    "search": "Buscar ",
+                    "lengthMenu": "Mostrar _MENU_  registros por pagina",
+                    "zeroRecords": "No hay Registros",
+                    "info": "Mostrando pagina _PAGE_ de _PAGES_",
+                    "infoEmpty": "No hay registros",
+                    "infoFiltered": "(filtered from _MAX_ total records)",
+                    "paginate": {
+                        "previous": "Atras",
+                        "next":"Siguiente"
+                    }
+
+                },
+
+
+            }).columns.adjust().draw();;
+            $('.dataTables_filter input[type="search"]').
+                attr('placeholder', 'Buscar....').
+                attr('onKeyUp','this.value=this.value.toUpperCase()').
+                css({ 'width': '350px', 'display': 'inline-block' });
+
            },
            error: function (errormessage) {
                alert(errormessage.responseText);
@@ -119,6 +141,8 @@ console.log(objecto);
              $.each(result, function (key, item) {
 
               if(item.respuesta>0){
+                var tabla = $("#tabla").DataTable();
+                tabla.destroy();
                   Listar();
                 swal({
                         type: "success",
@@ -252,6 +276,8 @@ console.log(objecto);
              $.each(result, function (key, item) {
 
               if(item.respuesta>0){
+                var tabla = $("#tabla").DataTable();
+                tabla.destroy();
                   Listar();
                 swal({
                         type: "success",
