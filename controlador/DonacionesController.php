@@ -49,11 +49,11 @@ switch ($funcion) {
     case 3:
     $sesion=VerificarSesion();
     if($session==True){
-<<<<<<< HEAD
+
       echo json_enconde($i->ActualizarInventarios($data));
-=======
+
       echo json_enconde($i->ActuzalizarInventarios($data));
->>>>>>> db02e2d451a9c419f42767fee96f29c9421042ab
+
     }else{
       session_destroy();
       header('Location: ../vistas/login/login.php');
