@@ -8,14 +8,14 @@
     <h3 class="panel-title" >Municipios</h3>
   </div>
   <div class="heading-elements">
-  <button type="button" class="btn btn-info btnderecha" data-toggle="modal" data-target="#modal_form">
+  <button type="button" class="btn btn-info btnderecha" id="btnmodal" data-toggle="modal" data-target="#modal_form">
 Agregar Municipios
 </button>
 
   </div>
 
   <div class="table_responsive">
-    <table class="table table-xs">
+    <table id="tabla" class="table table-xs">
       <thead>
         <tr class="bg-primary">
           <td>CODIGO</td>
@@ -77,10 +77,19 @@ Agregar Municipios
     <div class="col-sm-12 col-md-12 col-lg -12">
       <div class="form-group">
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6d2efc9dc61c5138c0eaf28c45f2eca2aab61bd9
 
         <p class="btnderecha">  <button  type="button" id="btnagregar" onclick="Insertar()" class="btn btn-success btn-sm btn-labeled ">Agregar</button>
           <button  type="button" id="btnactualizar" onclick="Actualizar()" class="btn btn-info btn-sm btn-labeled ">Actualizar</button>
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 6d2efc9dc61c5138c0eaf28c45f2eca2aab61bd9
          <button  type="button" data-dismiss="modal"  id="btncancelar" class="btn btn-danger btn-sm btn-labeled ">Cancelar</button></p>
 
       </div>

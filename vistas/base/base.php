@@ -17,14 +17,15 @@ require_once '../../vistas/ti.php';
     <title>PATITA</title>
 <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css">
     <!-- Bootstrap core CSS. -->
-    <link rel="stylesheet" href="../../css/barra.css">
-      <link rel="stylesheet" href="../../css/botones.css">
+
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
       <link href="../../css/navegador.css" rel="stylesheet">
       <link href="../../css/plugin/sweetalert/sweetalert.css" rel="stylesheet">
-      <link rel="stylesheet" href="../../css/plugin/datatable/dataTables.bootstrap.min.css">
+
       <script type="text/javascript" src="../../js/jquery-3.3.1.min.js" ></script>
       <script src="../../js/bootstrap.min.js"></script>
+
+
 
           <script src="../../js/plugins/sweetalert/sweetalert.min.js"></script>
       <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
@@ -34,39 +35,38 @@ require_once '../../vistas/ti.php';
       </script>
       <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 
+      
+      <link rel="stylesheet" href="../../css/barra.css">
+        <link rel="stylesheet" href="../../css/botones.css">
 
   </head>
 
   <body>
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Echame una Pata </a>
-         <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle"><img src="../../vistas/base/icono_menu.png" width="30" height="30" alt=""></a>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Echame una Pata </a>
+       <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle"><img src="../../vistas/base/icono_menu.png" width="30" height="30" alt=""></a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-     <ul class="nav navbar-nav navbar-right">
-         <li class="dropdown">
-         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo($_SESSION['usuario']); ?> <b class="caret"></b></a>
-         <ul class="dropdown-menu">
-           <li align="center" class="well">
-               <div><img class="img-responsive" style="padding:2%;" src="../../imagenes/userdog.jpg"/><a class="change" href=""></a></div>
-               <a href="#" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-user"><?php echo ($_SESSION['usuario']); ?></span> </a>
-               <a href="#" class="btn btn-sm btn-info"><span class="glyphicon glyphicon-share"></span>Salir</a>
-           </li>
-          </ul>
-       </li>
-     </ul>
-   </div><!-- /.navbar-collapse -->
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo($_SESSION['usuario']); ?> <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li align="center" class="well">
+                  <div><img class="img-responsive" style="padding:2%;" src="../../imagenes/userdog.jpg"/><a class="change" href=""></a></div>
+                  <a href="#" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-user"><?php echo ($_SESSION['usuario']); ?></span> </a>
+                  <a href="#" class="btn btn-sm btn-info"><span class="glyphicon glyphicon-share"></span>Salir</a>
+              </li>
+             </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+      <div class="container-fluid">
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+
       </div>
     </nav>
 

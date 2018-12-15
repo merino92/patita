@@ -112,3 +112,8 @@
     margin-right: 0;
   }
 }
+
+.navbar-header{
+  float: right;
+
+}
